@@ -1,0 +1,28 @@
+{% extends 'master.html' %}
+{% block content %}
+<br>
+<form method="post" action="add_cust">
+    {% csrf_token %}
+<div class="container">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon3">User-name</span>
+    </div>
+    <input type="text" class="form-control" id="basic-url1" aria-describedby="basic-addon3" name="n1">
+  </div><br><br>
+    <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon4">Password</span>
+    </div>
+    <input type="password" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="n2">
+  </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+
+        </div>
+        <input type="submit" class="btn btn-success" id="basic-url3" aria-describedby="basic-addon3" >
+  </div>
+</div>
+</form>
+{% endblock %}

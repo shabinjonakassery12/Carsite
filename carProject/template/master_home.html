@@ -1,0 +1,63 @@
+<style>
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+{% extends 'master.html' %}
+{% load static %}
+
+{% load tags %}
+
+{% block content %}
+<div class="container">
+    <div class="a">
+        <h1><center><u>Car sale report</u> </center></h1><br>
+
+            <table>
+                <tr>
+                    <th>SL NO</th>
+                    <th>Car_name</th>
+                    <th>Count</th>
+                </tr>
+                <tr>
+                    {% for car_report in c_report  %}
+                        <td>{{forloop.counter}}</td>
+                        <td>{{car_report}}</td>
+                        <td>{{car_report|car_report}}</td>
+                </tr>
+                    {% endfor %}
+
+                {% include 'pagination_car_report.html' with page=c_report %}
+            </table><br><br><br>
+    </div>
+
+<h1><center><u>Brand sale report</u></center></h1><br>
+<table>
+    <tr>
+        <th>SL NO</th>
+        <th>Brand</th>
+        <th>Count</th>
+    </tr>
+    <tr>
+        {% for brand_report in b_report %}
+            <td>{{forloop.counter}}</td>
+            <td>{{brand_report.brand_name}}</td>
+            <td>{{brand_report.get_car_count}}</td>
+    </tr>
+    {% endfor %}
+</table>
+    </div>
+{% endblock %}

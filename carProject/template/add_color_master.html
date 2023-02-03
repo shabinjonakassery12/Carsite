@@ -1,0 +1,22 @@
+{% extends 'master.html' %}
+{% block content %}
+<br><br>
+<form method="POST" action="add_color">
+    {% csrf_token %}
+<div class="container">
+    <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon4">Enter Color</span>
+    </div>
+    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="color">
+  </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+
+        </div>
+        <input type="submit" class="btn btn-success" id="basic-url3" aria-describedby="basic-addon3" >
+  </div>
+</div>
+</form>
+{% endblock %}
